@@ -1,13 +1,15 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../../Firebase/firebase.config";
-import { GoogleAuthProvider } from "firebase/auth/cordova";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const FirebaseProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+
 
 
     // create user
@@ -19,9 +21,18 @@ const FirebaseProvider = ({ children }) => {
     const loginUser = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
+    // logout user
+    const logout = () =>{
+        setUser(null)
+        signOut(auth)
+    }
     // google login
     const googleLogin = () => {
         return signInWithPopup(auth, googleProvider)
+    }
+    // github login
+    const githubLogin = () => {
+        return signInWithPopup(auth, githubProvider)
     }
 
     // observer 
@@ -36,7 +47,11 @@ const FirebaseProvider = ({ children }) => {
 
     const allValues = {
         createUser,
-        loginUser
+        loginUser,
+        googleLogin,
+        githubLogin,
+        logout,
+        user
     }
     return (
         <AuthContext.Provider value={allValues}>

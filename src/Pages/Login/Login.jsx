@@ -1,16 +1,13 @@
-import { useContext } from "react";
+
 import { Link } from "react-router-dom";
-import { AuthContext } from "../FirebaseProvider/FirebaseProvider";
+
 import { useForm } from "react-hook-form";
+import UseAuth from "../../Hooks/UseAuth";
+import SocialLogin from "../../SocialLogin/SocialLogin";
 
 
 const Login = () => {
-    // const handleLogin = e =>{
-    //     e.preventDefault();
-    //     const form = new FormData(e.currentTarget);
-    //     console.log(form)
-    // }
-    const {loginUser} = useContext(AuthContext)
+    const {loginUser} = UseAuth();
     const {
         register,
         handleSubmit,
@@ -52,6 +49,7 @@ const Login = () => {
                 </div>
             </form>
             <p className="text-center">Do not have an account? <Link to='/register'><span className="text-primary font-bold">Register</span></Link></p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };
