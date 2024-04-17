@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
 import UseAuth from "../../Hooks/UseAuth";
@@ -16,6 +16,11 @@ const Register = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
+
+    // navigation system
+    const navigate = useNavigate();
+    const location = useLocation();
+    const form = location?.state;
     // password validation
     const passwordValidationRules = {
         required: "Password is required",
@@ -34,7 +39,9 @@ const Register = () => {
         const { email, password } = data;
         createUser(email, password)
             .then(result => {
-                console.log(result);
+                if (result.user) {
+                    navigate(form);
+                }
                 toast.success("Registration successful");
             })
             .catch((error) => {

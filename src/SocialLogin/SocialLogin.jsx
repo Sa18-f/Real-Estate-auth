@@ -4,6 +4,8 @@ import UseAuth from "../Hooks/UseAuth";
 
 const SocialLogin = () => {
     const { googleLogin, githubLogin } = UseAuth();
+
+    // navigation system
     const navigate = useNavigate();
     const location = useLocation();
     const form = location?.state;

@@ -1,27 +1,36 @@
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
 import UseAuth from "../../Hooks/UseAuth";
 import SocialLogin from "../../SocialLogin/SocialLogin";
+import { ToastContainer, toast } from "react-toastify";
 
 
 const Login = () => {
-    const {loginUser} = UseAuth();
+    const { loginUser } = UseAuth();
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const onSubmit = data =>{
-        const {email, password} = data;
+    // navigation system
+    const navigate = useNavigate();
+    const location = useLocation();
+    const form = location?.state;
+
+    const onSubmit = data => {
+        const { email, password } = data;
         loginUser(email, password)
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => {
-            console.log(error)
-        })
+            .then(result => {
+                if (result.user) {
+                    navigate(form);
+                }
+                toast.success("Login successful");
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
     return (
         <div className="bg-base-200 py-10">
@@ -50,6 +59,7 @@ const Login = () => {
             </form>
             <p className="text-center">Do not have an account? <Link to='/register'><span className="text-primary font-bold">Register</span></Link></p>
             <SocialLogin></SocialLogin>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
