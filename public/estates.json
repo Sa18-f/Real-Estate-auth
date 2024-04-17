@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "title": "Luxurious Waterfront Villa",
+    "category": "Residential",
+    "description": "Experience unparalleled luxury living in this stunning waterfront villa. With breathtaking ocean views, a private beach, and resort-style amenities, this property offers the ultimate coastal lifestyle.",
+    "price": "$5,500,000",
+    "status": "sale",
+    "area": "8,000 sq ft",
+    "location": "123 Ocean Avenue, Coastal City, USA",
+    "facilities": [
+      "Infinity Pool",
+      "Private Beach Access",
+      "Spa and Wellness Center",
+      "Home Theater"
+    ],
+    "image": "https://i.ibb.co/Wx15WF4/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Modern Urban Penthouse",
+    "category": "Residential",
+    "description": "Live in the lap of luxury in this sleek and sophisticated penthouse overlooking the city skyline. With floor-to-ceiling windows, a spacious terrace, and high-end finishes throughout, this urban oasis is perfect for those seeking refined city living.",
+    "price": "$3,200,000",
+    "status": "rent",
+    "area": "3,500 sq ft",
+    "location": "789 Skyline Avenue, Downtown District, USA",
+    "facilities": [
+      "Private Terrace",
+      "Gourmet Kitchen",
+      "Fitness Center",
+      "Concierge Service"
+    ],
+    "image": "https://i.ibb.co/xgkqgkz/dillon-kydd-3-Ignkeds3w8-unsplash.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Charming Suburban Cottage",
+    "category": "Residential",
+    "description": "Escape the hustle and bustle in this charming suburban cottage nestled in a peaceful neighborhood. With a cozy fireplace, lush garden, and proximity to parks and schools, this home is perfect for families seeking tranquility.",
+    "price": "$750,000",
+    "status": "sale",
+    "area": "2,000 sq ft",
+    "location": "456 Maple Street, Suburbia, USA",
+    "facilities": [
+      "Wood-Burning Fireplace",
+      "Wrap-around Porch",
+      "Backyard Garden",
+      "Home Office"
+    ],
+    "image": "https://i.ibb.co/GkB67Mp/todd-kent-178j8t-Jr-Nlc-unsplash.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Elegant Country Manor",
+    "category": "Residential",
+    "description": "Step into a world of elegance and sophistication with this breathtaking country manor. Set amidst rolling hills and manicured gardens, this estate boasts timeless architecture, luxurious interiors, and unparalleled privacy.",
+    "price": "$4,800,000",
+    "status": "rent",
+    "area": "6,500 sq ft",
+    "location": "789 Meadow Lane, Rural Countryside, USA",
+    "facilities": [
+      "Grand Foyer",
+      "Private Library",
+      "Tennis Court",
+      "Guest House"
+    ],
+    "image": "https://i.ibb.co/my7kmRD/james-cai-30fh2r-Xm-Iec-unsplash.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Urban Loft",
+    "category": "Residential",
+    "description": "Trendy urban loft with industrial-chic design elements and city skyline views.",
+    "price": "$600,000",
+    "status": "sale",
+    "area": "1,800 sq ft",
+    "location": "San Francisco, CA",
+    "facilities": ["2 bedrooms", "2 bathrooms", "Exposed brick walls", "High ceilings"],
+    "image": "https://i.ibb.co/RChzLr5/gustavo-zambelli-n-Evz-SXBIhi-U-unsplash.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Mountain Retreat",
+    "category": "Residential",
+    "description": "Secluded mountain retreat surrounded by nature, perfect for relaxation and outdoor activities.",
+    "price": "$800,000",
+    "status": "sale",
+    "area": "4,500 sq ft",
+    "location": "Aspen, CO",
+    "facilities": ["4 bedrooms", "3 bathrooms", "Hiking trails nearby", "Hot tub", "Deck with mountain views"],
+    "image": "https://i.ibb.co/jMv7SR1/stephan-bechert-y-FV39g6-AZ5o-unsplash.jpg"
+  }
+]
