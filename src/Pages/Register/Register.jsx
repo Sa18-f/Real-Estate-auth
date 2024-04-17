@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import UseAuth from "../../Hooks/UseAuth";
 import SocialLogin from "../../SocialLogin/SocialLogin";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -14,12 +16,30 @@ const Register = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const onSubmit = data =>{
-        const {email, password} = data;
+    // password validation
+    const passwordValidationRules = {
+        required: "Password is required",
+        minLength: {
+            value: 6,
+            message: "Password must be at least 6 characters long",
+        },
+        pattern: {
+            value: /^(?=.*[a-z])(?=.*[A-Z])/,
+            message: "Password must contain at least one uppercase letter and one lowercase letter",
+        },
+    };
+
+
+    const onSubmit = data => {
+        const { email, password } = data;
         createUser(email, password)
-        .then(result => {
-            console.log(result);
-        })
+            .then(result => {
+                console.log(result);
+                toast.success("Registration successful");
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     }
     return (
         <div>
@@ -51,8 +71,8 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" placeholder="password" name="password" className="input input-bordered" {...register("password", { required: true })} />
-                        {errors.password && <span className="text-red-500">This field is required</span>}
+                        <input type="password" placeholder="password" name="password" className="input input-bordered" {...register("password", passwordValidationRules)} />
+                        {errors.password && <span className="text-red-500">{errors.password.message}</span>}
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
@@ -64,6 +84,7 @@ const Register = () => {
                 <p className="text-center">Already have an account? <Link to='/login'><span className="text-primary font-bold">Login</span></Link></p>
                 <SocialLogin></SocialLogin>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
