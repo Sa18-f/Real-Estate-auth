@@ -1,8 +1,14 @@
-# React + Vite
+# Real Estate Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Real Estate Finder! This web application allows users to search for and manage real estate listings.
 
-Currently, two official plugins are available:
+Live Site URL: [[Your Live Site URL](http://localhost:5174/)]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **User Authentication**: Users can sign up, log in, and log out securely using Firebase Authentication.
+- **Update Profile**: Authenticated users can update their profile information, including their name and profile picture.
+- **Real-Time Property Listings**: Users can browse real-time property listings fetched from a database.
+- **Social Login**: Users have the option to log in using their Google or GitHub accounts for convenience.
+- **Private Routes**: Certain routes, such as the update profile page, are protected and can only be accessed by authenticated users.
+
