@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import UseAuth from "../../Hooks/UseAuth";
 import SocialLogin from "../../SocialLogin/SocialLogin";
 import { ToastContainer, toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -34,6 +35,9 @@ const Login = () => {
     }
     return (
         <div className="bg-base-200 py-10">
+            <Helmet>
+                <title>FindHouse | Login</title>
+            </Helmet>
             <h2 className="text-5xl font-bold text-center">Please Login</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="md:w-3/4 lg:w-1/2 mx-auto py-12">
                 <div className="form-control">

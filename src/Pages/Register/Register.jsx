@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import { FaEye } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -54,6 +55,9 @@ const Register = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>FindHouse | Register</title>
+            </Helmet>
             <div className="bg-base-200 py-10">
                 <h2 className="text-5xl font-bold text-center">Please Register</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="md:w-3/4 lg:w-1/2 mx-auto py-12">

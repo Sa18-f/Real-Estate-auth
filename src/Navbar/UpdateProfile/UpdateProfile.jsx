@@ -3,6 +3,7 @@ import UseAuth from "../../Hooks/UseAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 
 const UpdateProfile = () => {
@@ -37,6 +38,9 @@ const UpdateProfile = () => {
     };
     return (
         <div className="bg-base-200 py-10">
+            <Helmet>
+                <title>FindHouse | Update Profile</title>
+            </Helmet>
             <h1 className="text-center text-4xl font-bold">Update Your Profile</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="md:w-3/4 lg:w-1/2 mx-auto py-12">
                 <div className="form-control">

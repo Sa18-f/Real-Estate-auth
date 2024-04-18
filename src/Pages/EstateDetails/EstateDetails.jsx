@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
 
 
@@ -8,6 +9,9 @@ const EstateDetails = () => {
     const estate = estates.find(estate => estate.id === estateIdInt)
     return (
         <div className="flex lg:flex-row  flex-col justify-between bg-base-100 shadow-xl rounded-xl lg:my-12">
+            <Helmet>
+                <title>FindHouse | Estate Details: {id} </title>
+            </Helmet>
             <div className="rounded-xl lg:w-[675px] h-full mt-4">
                 <div className="py-12 px-8">
                     <img className="rounded-xl mx-auto" src={estate.image} alt="Album" />

@@ -29,14 +29,6 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end lg:gap-3">
-                    {/* <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 h-10 rounded-full">
-                            <img alt="Tailwind CSS Navbar component" src="https://i.ibb.co/CKwMc4k/download.png" />
-                        </div>
-                    </div>
-                    <Link to="/login">
-                        <button className="btn">Login</button>
-                    </Link> */}
                     {
                         user ? <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

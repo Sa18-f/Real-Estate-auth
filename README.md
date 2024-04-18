@@ -12,3 +12,12 @@ Welcome to Real Estate Finder! This web application allows users to search for a
 - **Social Login**: Users have the option to log in using their Google or GitHub accounts for convenience.
 - **Private Routes**: Certain routes, such as the update profile page, are protected and can only be accessed by authenticated users.
 
+
+## npm Packages Used
+
+- `react`: JavaScript library for building user interfaces
+- `react-router-dom`: Declarative routing for React applications
+- `react-hook-form`: Form validation library for React
+- `firebase`: JavaScript library for Firebase platform
+- `react-toastify`: Notification library for React applications
+
