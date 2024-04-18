@@ -2,7 +2,7 @@
 
 Welcome to Real Estate Finder! This web application allows users to search for and manage real estate listings.
 
-[Live Site](https://capable-jalebi-8bf3e1.netlify.app/)
+[Live Site](https://cosmic-rugelach-ddb064.netlify.app/)
 
 ## Features
 
