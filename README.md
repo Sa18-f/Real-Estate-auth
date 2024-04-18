@@ -15,6 +15,8 @@ Welcome to Real Estate Finder! This web application allows users to search for a
 
 ## npm Packages Used
 
+- `aos`: Library for animating elements as they scroll into view
+- `animate.css`: Library for adding CSS animations to elements
 - `react`: JavaScript library for building user interfaces
 - `react-router-dom`: Declarative routing for React applications
 - `react-hook-form`: Form validation library for React

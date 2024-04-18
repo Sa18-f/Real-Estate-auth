@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import SingleEstates from "../SingleEstates/SingleEstates";
+import 'animate.css';
 
 
 const Estates = () => {
@@ -12,7 +13,7 @@ const Estates = () => {
     }, [])
     return (
         <section>
-            <h1 className="text-5xl font-bold text-center">Explore homes on <br /> <span className="text-orange-300">FindHouse</span></h1>
+            <h1 className="text-5xl font-bold text-center animate__animated animate__bounce">Explore homes on <br /> <span className="text-orange-300">FindHouse</span></h1>
             <p className="my-4 text-center">Take a deep dive and browse homes for sale, original neighborhood photos, resident reviews and local  <br />insights to find what is right for you.</p>
             <div className="grid lg:grid-cols-3 gap-10 my-10">
                 {

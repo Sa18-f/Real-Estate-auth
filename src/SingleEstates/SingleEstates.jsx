@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 const SingleEstates = ({ estate }) => {
     const { id, title, image, price, status, category } = estate;
     return (
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card bg-base-100 shadow-xl" data-aos="fade-up"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000">
             <div className='bg-[#F3F3F3] m-4 rounded-xl'>
                 <figure>
                     <img src={image} alt="Shoes" className="rounded-xl" />

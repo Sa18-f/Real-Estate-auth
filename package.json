@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
     "dotenv": "^16.4.5",
     "firebase": "^10.11.0",
     "localforage": "^1.10.0",
