@@ -23,29 +23,21 @@ const Login = () => {
     const location = useLocation();
     const form = location?.state;
 
-    const passwordValidationRules = {
-        required: "Password is required",
-        minLength: {
-            value: 6,
-            message: "Password must be at least 6 characters long",
-        },
-        pattern: {
-            value: /^(?=.*[a-z])(?=.*[A-Z])/,
-            message: "Password must contain at least one uppercase letter and one lowercase letter",
-        },
-    };
-
     const onSubmit = data => {
         const { email, password } = data;
         loginUser(email, password)
             .then(result => {
                 if (result.user) {
                     navigate(form);
+                    toast.success("Login successful");
                 }
-                toast.success("Login successful");
+                else{
+                    toast.error("Invalid email or password")
+                }
             })
             .catch(error => {
-                console.log(error)
+                console.error(error)
+                toast.error("An error occurred. Please try again later.");
             })
     }
     return (
@@ -67,7 +59,7 @@ const Login = () => {
                         <span className="label-text">Password</span>
                     </label>
                     <div className="join">
-                        <input type={showPassword ? 'text' : 'password'} placeholder="password" name="password" className="w-full input input-bordered" {...register("password", passwordValidationRules)} />
+                        <input type={showPassword ? 'text' : 'password'} placeholder="password" name="password" className="w-full input input-bordered" {...register("password")} required/>
                         <FaEye className="my-auto -ml-8" onClick={() => setShowPassword(!showPassword)} />
                     </div>
                     {errors.password && <span className="text-red-500">{errors.password.message}</span>}
