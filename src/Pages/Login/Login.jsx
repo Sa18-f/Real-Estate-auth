@@ -6,10 +6,13 @@ import UseAuth from "../../Hooks/UseAuth";
 import SocialLogin from "../../SocialLogin/SocialLogin";
 import { ToastContainer, toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
+import { FaEye } from "react-icons/fa";
 
 
 const Login = () => {
     const { loginUser } = UseAuth();
+    const [showPassword, setShowPassword] = useState(false);
     const {
         register,
         handleSubmit,
@@ -19,6 +22,18 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const form = location?.state;
+
+    const passwordValidationRules = {
+        required: "Password is required",
+        minLength: {
+            value: 6,
+            message: "Password must be at least 6 characters long",
+        },
+        pattern: {
+            value: /^(?=.*[a-z])(?=.*[A-Z])/,
+            message: "Password must contain at least one uppercase letter and one lowercase letter",
+        },
+    };
 
     const onSubmit = data => {
         const { email, password } = data;
@@ -51,8 +66,11 @@ const Login = () => {
                     <label className="label">
                         <span className="label-text">Password</span>
                     </label>
-                    <input type="password" placeholder="password" name="password" className="input input-bordered" {...register("password", { required: true })} />
-                    {errors.password && <span className="text-red-500">This field is required</span>}
+                    <div className="join">
+                        <input type={showPassword ? 'text' : 'password'} placeholder="password" name="password" className="w-full input input-bordered" {...register("password", passwordValidationRules)} />
+                        <FaEye className="my-auto -ml-8" onClick={() => setShowPassword(!showPassword)} />
+                    </div>
+                    {errors.password && <span className="text-red-500">{errors.password.message}</span>}
                     <label className="label">
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>
