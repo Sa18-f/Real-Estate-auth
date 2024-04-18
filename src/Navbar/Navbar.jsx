@@ -8,7 +8,6 @@ const Navbar = () => {
         <li><NavLink to="/updateProfile">Update Profile</NavLink></li>
     </>
     const { logout, user } = UseAuth();
-    console.log(user)
     return (
         <div>
             <div className="navbar bg-base-100">

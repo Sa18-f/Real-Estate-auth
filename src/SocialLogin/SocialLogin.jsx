@@ -8,13 +8,13 @@ const SocialLogin = () => {
     // navigation system
     const navigate = useNavigate();
     const location = useLocation();
-    const form = location?.state;
+    const from = location.state?.from?.pathname || '/';
 
     const handleSocialLogin = socialProvider =>{
         socialProvider()
         .then(result => {
             if(result.user){
-                navigate(form);
+                navigate(from, {replace: true});
             }
         })
     }

@@ -8,15 +8,10 @@ const PrivateRoute = ({children}) => {
     if(loading){
         return <h1 className="text-4xl">Loading...</h1>
     }
-
-    if(!user){
-        return <Navigate to='/login' state={location?.pathname || '/'}/>
+    if(user){
+        return children
     }
-    return (
-        <div>
-            {children}
-        </div>
-    );
+    return <Navigate to="/login" state={{from: location}} replace></Navigate>
 };
 
 export default PrivateRoute;
