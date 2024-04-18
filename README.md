@@ -2,7 +2,7 @@
 
 Welcome to Real Estate Finder! This web application allows users to search for and manage real estate listings.
 
-Live Site URL: [[Your Live Site URL](http://localhost:5174/)]
+[Live Site](http://localhost:5174/)
 
 ## Features
 
