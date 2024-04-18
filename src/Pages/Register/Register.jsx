@@ -6,11 +6,15 @@ import UseAuth from "../../Hooks/UseAuth";
 import SocialLogin from "../../SocialLogin/SocialLogin";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
+import { FaEye } from "react-icons/fa";
 
 
 
 const Register = () => {
     const { createUser } = UseAuth();
+    const [showPassword, setShowPassword] = useState(false);
+
     const {
         register,
         handleSubmit,
@@ -78,7 +82,10 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" placeholder="password" name="password" className="input input-bordered" {...register("password", passwordValidationRules)} />
+                        <div className="join">
+                            <input type={showPassword ? 'text' : 'password'} placeholder="password" name="password" className="w-full input input-bordered" {...register("password", passwordValidationRules)} />
+                            <FaEye className="my-auto -ml-8" onClick={() => setShowPassword(!showPassword)} />
+                        </div>
                         {errors.password && <span className="text-red-500">{errors.password.message}</span>}
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>

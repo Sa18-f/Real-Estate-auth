@@ -43,13 +43,13 @@ const UpdateProfile = () => {
                     <label className="label">
                         <span className="label-text">Full Name</span>
                     </label>
-                    <input type="text" name="name"  onChange={(e) => setDisplayName(e.target.value)} className="input input-bordered" />
+                    <input type="text" name="name"  defaultValue={user.displayName} onChange={(e) => setDisplayName(e.target.value)} className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Image URL</span>
                     </label>
-                    <input type="text" name="image"  onChange={(e) => setPhotoURL(e.target.value)} className="input input-bordered" />
+                    <input type="text" name="image" defaultValue={user.photoURL} onChange={(e) => setPhotoURL(e.target.value)} className="input input-bordered" />
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Save changes</button>
