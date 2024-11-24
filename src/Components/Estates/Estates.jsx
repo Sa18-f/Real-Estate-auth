@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import SingleEstates from "../SingleEstates/SingleEstates";
+import SingleEstates from "../Estates/SingleEstates";
 import 'animate.css';
 
 

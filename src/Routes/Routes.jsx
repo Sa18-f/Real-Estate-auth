@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../Layouts/Root";
-import Home from "../Pages/Home";
-import UpdateProfile from "../Navbar/UpdateProfile/UpdateProfile";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import EstateDetails from "../Pages/EstateDetails/EstateDetails";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import Errorpage from "../Pages/ErrorPage/Errorpage";
 import About from "../Pages/About/About";
+import Home from "../Components/Home/Home";
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 
 const Routes = createBrowserRouter([
     {
@@ -17,11 +17,11 @@ const Routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home />
             },
             {
                 path: '/updateProfile',
-                element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>   
+                element: <PrivateRoute><UpdateProfile /></PrivateRoute>   
             },
             {
                 path: '/login',
